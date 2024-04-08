@@ -14,7 +14,7 @@ const Login = () => {
                     <input className="loginInput" type="password"/>
                 </div>
                     <button className='loginButton' onClick={() => {alert('로그인 되었습니다!')}}>Login</button>
-                    <button className='signupButton' onClick={() => {alert('회원가입 페이지로 이동합니다!')}}>signup</button>
+                    <button className='moveToSignupButton' onClick={() => {alert('회원가입 페이지로 이동합니다!')}}>signup</button>
             </div>
         </div>
     )
