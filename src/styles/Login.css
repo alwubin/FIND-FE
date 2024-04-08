@@ -1,0 +1,61 @@
+.loginPage {
+    padding-top: 80px;
+    width: 100%;
+    height: calc(100vh - 100px); 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.loginPageContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+}
+
+.loginInputWarp {
+    display: flex;
+    color: #0130AB;
+    font-size: 15px;
+    border-radius: 6px;
+    padding: 15px;
+    margin-top: 8px;
+    background-color: transparent;
+    border-bottom: 1px solid #7CA1FF;
+    width: 260px;
+}
+
+.loginInput {
+    width: 100%;
+    margin-left: 10px;
+    outline: none;
+    border: none;
+    height: 16px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.loginButton {
+    margin-top: 20px;
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    color: #FFFFF8;
+    outline: none;
+    border: none;
+    background-color: #7CA1FF;
+    cursor: pointer;
+}
+
+.signupButton {
+    margin-top: 10px;
+    color: #7CA1FF;
+    text-decoration: underline;
+    outline: none;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
