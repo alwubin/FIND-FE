@@ -1,9 +1,9 @@
 import React from 'react';
-import '../styles/Main.css';
+import '../styles/Main.css'
 
 const Main = () => {
     return (
-        <div className="main">
+        <div className="mainPage">
             <h1>Welcome to the Main Page</h1>
         </div>
     )
