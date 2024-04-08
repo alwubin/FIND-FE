@@ -37,3 +37,6 @@
     flex-grow: 1;
 }
 
+.userIcon {
+    cursor: pointer;
+}
