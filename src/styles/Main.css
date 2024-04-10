@@ -23,7 +23,7 @@
     border-radius: 25px;
     float: right;
     color: white;
-    background-color: #39559b;
+    background-color: #0130AB;
 }
 
 .speechBubbleWrap > div.from-them {
@@ -39,7 +39,7 @@
     bottom: -2px;
     right: -7px;
     height: 20px;
-    border-right: 20px solid #39559b;
+    border-right: 20px solid #0130AB;
     border-bottom-left-radius: 16px 14px;
     -webkit-transform: translate(0, -2px);
 }
@@ -93,7 +93,7 @@
 }
 
 .foodCatergoryWrap > div.category.active {
-    background-color: #39559b;
+    background-color: #0130AB;
     color: white;
 }
 
