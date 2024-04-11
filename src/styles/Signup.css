@@ -72,3 +72,9 @@
 .signupButton:disabled {
     background-color: #a9b7cb;
 }
+
+.inputMessage {
+    font-size: 10px;
+    margin-bottom: 5px;
+    color: #EC6863;
+}
