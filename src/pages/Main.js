@@ -9,8 +9,8 @@ const Main = () => {
 
     const messages = [
         { sender: 'me', text: '님아 오늘 뭐먹?' },
-        { sender: 'them', text: 'ㄹㅇ 메뉴 고민이 단국대학교 입학보다 어려움;' },
-        { sender: 'me', text: '[속보] 인류 최대 난제 생겨.. "오늘 뭐 먹지?"' },
+        { sender: 'them', text: '무슨 메뉴 고민이 단국대학교 입학보다 어렵냐;' },
+        { sender: 'me', text: '그럴 줄 알고 내가 준비했지 밑에서 골라봐 ㅋ' },
     ];
 
     const foodCategory = ["전체", "한식", "중식", "양식", "일식"];
