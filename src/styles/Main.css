@@ -101,21 +101,87 @@
     .foodCatergoryWrap {
         max-width: 350px;
         flex-wrap: wrap;
+        margin: 0 auto;
     }
 
     .foodCatergoryWrap > div.category {
         margin: 8px;
         padding: 8px 16px;
     }
+
+    .storeListWrap {
+        max-width: 400px;
+        margin: 30px auto;
+    }
 }
 
 @media (min-width: 1024px) {
     .foodCatergoryWrap {
         max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .storeListWrap {
+        max-width: 1000px;
+        margin: 30px auto;
     }
 
     .foodCatergoryWrap > div.category {
         padding: 12px 24px;
         margin: 0 12px;
     }
+}
+
+.storeListWrap {
+    max-width: 950px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 30px auto;
+}
+
+.storeListWrap > .storeList {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.storeListWrap > .storeList.exit {
+    opacity: 0;
+    transform: translateY(10px);
+}
+  
+.storeList {
+    width: 300px;
+    border: 1px solid #ccc;
+    color: #4D6AB3;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.storeList:hover {
+    background-color: #0130AB; 
+    color: #FFFFFF; 
+}
+  
+.storeImg img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+  
+.storeName {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px;
+}
+  
+.storeInfo {
+    padding: 10px;
 }
