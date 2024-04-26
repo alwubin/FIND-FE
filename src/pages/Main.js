@@ -9,7 +9,7 @@ const Main = () => {
 
     const messages = [
         { sender: 'me', text: '님아 오늘 뭐먹?' },
-        { sender: 'them', text: 'ㄹㅇ 메뉴 고민이 알고리즘 푸는 거보다 더 어려움;' },
+        { sender: 'them', text: 'ㄹㅇ 메뉴 고민이 단국대학교 입학보다 어려움;' },
         { sender: 'me', text: '[속보] 인류 최대 난제 생겨.. "오늘 뭐 먹지?"' },
     ];
 
