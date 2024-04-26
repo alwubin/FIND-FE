@@ -1,4 +1,5 @@
 .headerWrapper {
+    z-index: 999999;
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -6,6 +7,7 @@
     width: 100%;
     border-bottom: 1.5px solid #7CA1FF;
     height: 80px;
+    background-color: white;
 }
 
 .header {

@@ -1,20 +1,54 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import '../styles/Main.css'
 
 const Main = () => {
     const [activeIndex, setActiveIndex] = useState(0);
+    const [listIndex, setListIndex] = useState(0);
+    const [storelist, setStoreList] = useState([]);
 
     const messages = [
         { sender: 'me', text: '님아 오늘 뭐먹?' },
-        { sender: 'them', text: 'ㄹㅇ 메뉴 고민이 알고리즘 푸는 거보다 더 어려움;' },
-        { sender: 'me', text: '[속보] 인류 최대 난제 생겨.. "오늘 뭐 먹지?"' },
+        { sender: 'them', text: '무슨 메뉴 고민이 단국대학교 입학보다 어렵냐;' },
+        { sender: 'me', text: '그럴 줄 알고 내가 준비했지 밑에서 골라봐 ㅋ' },
     ];
 
-    const foodCategory = ["전체", "한식", "양식", "중식", "일식"];
+    const foodCategory = ["전체", "한식", "중식", "양식", "일식"];
 
     const handleCategoryClick = (index) => {
         setActiveIndex(index);
+        setListIndex(index);
+
+        if (index === 0) {
+            getStoreListAll();
+        } else {
+            getStoreList(index);
+        }
     };
+
+    const getStoreListAll = () => {
+        axios.get('http://13.51.69.114:8080/api/store/storelistAll')
+        .then ((res) => {
+            setStoreList(res.data);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    }
+
+    const getStoreList = (listIndex) => {
+        axios.get(`http://13.51.69.114:8080/api/store/storelist/category/${listIndex}`)
+        .then ((res) => {
+            setStoreList(res.data);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    }
+
+    useEffect(() => {
+        getStoreListAll();
+    }, [])
 
     return (
         <div className="mainPage">
@@ -32,8 +66,17 @@ const Main = () => {
                         <div 
                         key={index}
                         className={`category ${index === activeIndex ? 'active' : ''}`}
-                        onClick={() => handleCategoryClick(index)}>
+                        onClick={() => {handleCategoryClick(index)}}>
                             {catergory}
+                        </div>
+                    ))}
+                </div>
+                <div className='storeListWrap'>
+                    {storelist.map((store, index) => (
+                        <div key={index} className='storeList'>
+                            <div  className='storeImg'><img src={store.storePictureUrl} alt="storeImg"/></div>
+                            <div className='storeName'>{store.storeName}</div>
+                            <div className='storeInfo'>{store.info}</div>
                         </div>
                     ))}
                 </div>
