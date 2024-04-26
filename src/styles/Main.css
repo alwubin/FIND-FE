@@ -158,16 +158,6 @@
     margin: 30px auto;
 }
 
-.storeListWrap > .storeList {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.storeListWrap > .storeList.exit {
-    opacity: 0;
-    transform: translateY(10px);
-}
-  
 .storeList {
     width: 300px;
     border: 1px solid #ccc;
@@ -178,7 +168,6 @@
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s;
-    transition: all 0.3s ease;
     cursor: pointer;
 }
 
