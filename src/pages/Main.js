@@ -18,28 +18,14 @@ const Main = () => {
     const handleCategoryClick = (index) => {
         setActiveIndex(index);
         setListIndex(index);
-
-        if (index === 0) {
-            getStoreListAll();
-        } else {
-            getStoreList(index);
-        }
+        getStoreList(index);
     };
 
-    const getStoreListAll = () => {
-        axios.get('http://13.51.69.114:8080/api/store/storelistAll')
-        .then ((res) => {
-            setStoreList(res.data);
-        })
-        .catch((err) => {
-            console.log(err);
-        });
-    }
-
     const getStoreList = (listIndex) => {
-        axios.get(`http://13.51.69.114:8080/api/store/storelist/category/${listIndex}`)
+        axios.get(`http://13.60.59.245:8080/api/store/storelist/category/${listIndex}`)
         .then ((res) => {
             setStoreList(res.data);
+            console.log(res.data);
         })
         .catch((err) => {
             console.log(err);
@@ -47,7 +33,7 @@ const Main = () => {
     }
 
     useEffect(() => {
-        getStoreListAll();
+        getStoreList(listIndex);
     }, [])
 
     return (
