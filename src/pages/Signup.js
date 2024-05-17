@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import '../styles/Signup.css';
 
 const Signup = () => {
@@ -34,10 +35,20 @@ const Signup = () => {
         setPasswordCheck(e.target.value);
     }
 
-    const handleIdCheck = (id) => {
-        //아이디 중복확인 api 로직 
+    const handleIdCheck = () => {
+        axios.get(`http://16.171.231.94:8080/api/users/check-id?loginId=${id}`,
+            { withCredentials: true }
+        )
+        .then((res) => {
+            console.log(res)
+
+        })
+        .catch(() => {
+            console.log('이미 존대하는 아이디 입니다.')
+            setIdCheck(false);
+        })
         setIdCheck(true);
-        setIdMessage('사용 가능한 아이디입니다.');
+        setIdMessage('사용 가능한 아이디입니다!')
     }
 
     useEffect(() => {
@@ -70,7 +81,7 @@ const Signup = () => {
                 setPasswordValid(true);
             } else {
                 setPasswordValid(false);
-                setPasswordMessage('비밀번호는 8-20자의 영문, 숫자, 특수문자로 구성되어야 합니다.');
+                setPasswordMessage('비밀번호는 8-20자의 대소문자 영문, 숫자, 특수문자로 구성되어야 합니다.');
             }
 
             if (pw === passwordCheck) {
@@ -84,10 +95,35 @@ const Signup = () => {
     useEffect(() => {
         if (nicknameValid && idValid && passwordMatch && passwordValid) {
             setIsEmpty(false);
+            console.log(nicknameValid)
+            console.log(idValid)
+            console.log(passwordMatch)
+            console.log(passwordValid)
         } else {
             setIsEmpty(true);
         }
     }, [nicknameValid, idValid, passwordMatch, passwordValid]);
+
+    const registerUser = () => {
+        axios.post('http://16.171.231.94:8080/api/users/register',
+            {
+                'loginId': id,
+                'password': pw,
+                'nickname': nickname
+            },
+            { withCredentials: true }
+        )
+        .then((res) => {
+            console.log(res);
+            alert('회원가입 성공');
+            window.location.href = '/login';
+        })
+        .catch((err) => {
+            console.log(err);
+            alert('회원가입 실패')
+        })
+    }
+
 
     return (
         <div className='signupPage'>
@@ -103,7 +139,7 @@ const Signup = () => {
                         onChange={handleNickname} />
                 </div>
 
-                {idCheck && <div className='inputMessage'>{idMessage}</div>}
+                {idCheck && <div className='inputMessage' style={{color:'blue'}}>{idMessage}</div>}
                 <div className='signupInputWrap' style={{marginBottom:'0'}}>
                     id
                     <input 
@@ -136,7 +172,7 @@ const Signup = () => {
                         value={passwordCheck}
                         onChange={handlePasswordCheck} />
                 </div>
-                <button className='signupButton' disabled={isEmpty}>Sign up</button>
+                <button className='signupButton' disabled={isEmpty} onClick={registerUser}>Sign up</button>
             </div>
         </div>
     )
