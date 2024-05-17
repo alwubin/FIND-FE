@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import axios from 'axios';
 import '../styles/Signup.css';
 
 const Signup = () => {
+    const navigate = useNavigate();
+
     const [nickname, setNickname] = useState('');
     const [nicknameValid, setNicknameValid] = useState(false);
     const [nicknameMessage, setNicknameMessage] = useState('');
@@ -116,7 +119,7 @@ const Signup = () => {
         .then((res) => {
             console.log(res);
             alert('회원가입 성공');
-            window.location.href = '/login';
+            navigate('/login');
         })
         .catch((err) => {
             console.log(err);
