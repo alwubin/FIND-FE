@@ -20,6 +20,7 @@ const Login = () => {
             alert('로그인 성공');
             localStorage.setItem('accessToken', res.data.result.accessToken);
             localStorage.setItem('refreshToken', res.data.result.refreshToken);
+            navigate('/');
         })
         .catch((err) => {
             console.log(err);
@@ -56,7 +57,7 @@ const Login = () => {
                 <div className='loginInputWarp'>
                     pw
                     <input 
-                        className="loginInput" 
+                        className="pwInput" 
                         type="password"
                         value={pw}
                         onChange={handlePw}/>
