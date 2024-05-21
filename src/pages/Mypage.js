@@ -1,9 +1,58 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { HiMiniUserCircle } from "react-icons/hi2";
 import { FaChevronRight } from "react-icons/fa6";
 import '../styles/Mypage.css';
 
+
 const Mypage = () => {
+
+    const [userId, setUserId] = useState(0);
+    const [loginId, setLoginId] = useState('thisisidsample');
+    const [nickname, setNickname] = useState('단곰이');
+    const [reviews, setReviews] = useState([]);
+
+    const handleLogout = () => {
+        localStorage.removeItem('accessToken');
+        window.location.href = '/';
+        alert('로그아웃 되었습니다!')
+    }
+
+    const inquireMyPage = () => {
+        axios.get(`http://16.171.231.94:8080/api/users/me`, {
+            withCredentials: true,
+            headers: {
+                Authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            } 
+        })
+        .then((res) => {
+            const myInfo = res.data.result;
+            setNickname(myInfo.nickname);
+            setLoginId(myInfo.loginId);
+            setReviews(myInfo.reviews);
+            setUserId(myInfo.userId);
+        })
+        .catch((err) => {
+            // if (err.response.status === 401) {
+            //     refreshAccessToken()
+            //         .then(() => {
+            //             inquireMyPage();
+            //         })
+            // } else {
+            //     console.log('마이페이지 조회 실패', err);
+            // }
+            console.log('마이페이지 조회 실패', err);
+        })
+    }
+
+    useEffect(() => {
+        if (!localStorage.getItem('accessToken')) {
+            window.location.href = '/';
+        } else {
+            inquireMyPage();
+        }
+    }, []);
+
     return (
         <div className='myPage'>
             <div className='myPageContent'>
@@ -12,7 +61,7 @@ const Mypage = () => {
                         <HiMiniUserCircle size="64px" color='#6476fc'/>
                     </div>
                     <div className='profileName'>
-                        단곰이
+                        {nickname}
                     </div>
                 </div>
 
@@ -25,7 +74,7 @@ const Mypage = () => {
                                     아이디
                                 </div>
                                 <div className='accountId'>
-                                    thisisidsample
+                                    {loginId}
                                 </div>
                             </div>
                         </div>
@@ -68,7 +117,7 @@ const Mypage = () => {
                     </div>
                 </div> */}
                 
-                <button className='myPageLogoutButton'>로그아웃</button>
+                <button className='myPageLogoutButton' onClick={handleLogout}>로그아웃</button>
             </div>
         </div>
     )
