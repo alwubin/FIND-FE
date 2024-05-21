@@ -5,6 +5,14 @@ import '../styles/Header.css';
 
 const Header = () => {
     const navigate = useNavigate();
+
+    const handleHeader = () => {
+        if (localStorage.getItem('accessToken')) {
+            navigate('/mypage');
+        } else {
+            navigate('/login');
+        }
+    }
     return (
         <div className='headerWrapper'>
             <div className='header'>
@@ -13,7 +21,7 @@ const Header = () => {
                         F?ND
                     </div>
                     <div className='spacer'></div>
-                    <FaRegUser className='userIcon' onClick={() => { navigate('/login') }} size="28px" color='#6476fc'/>
+                    <FaRegUser className='userIcon' onClick={handleHeader} size="28px" color='#6476fc'/>
                 </div>
             </div>
         </div>
