@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../styles/Main.css'
+import { useNavigate } from 'react-router-dom';
 
 const Main = () => {
+    const navigate = useNavigate();
     const [activeIndex, setActiveIndex] = useState(0);
     const [listIndex, setListIndex] = useState(0);
     const [storelist, setStoreList] = useState([]);
+    const [storeId, setStoreId] = useState(0);
 
     const messages = [
         { sender: 'me', text: '님아 오늘 뭐먹?' },
@@ -22,14 +25,23 @@ const Main = () => {
     };
 
     const getStoreList = (listIndex) => {
-        axios.get(`http://13.60.59.245:8080/api/store/storelist/category/${listIndex}`)
+        axios.get(`http://16.171.231.94:8080/api/store/storelist/category/${listIndex}`)
         .then ((res) => {
-            setStoreList(res.data);
+            setStoreList(res.data.result);
             console.log(res.data);
         })
         .catch((err) => {
             console.log(err);
         });
+    }
+
+    const moveToDetail = (store) => {
+        const storeId = store.storeId;
+        setStoreId(storeId);
+
+        //localStorage -> localStorage.getItem(storeId) & useLocation -> location.state.storeId로 받아올 수 있음
+        localStorage.setItem('storeId', storeId);
+        navigate('/detail', { state: { storeId } });
     }
 
     useEffect(() => {
@@ -59,7 +71,7 @@ const Main = () => {
                 </div>
                 <div className='storeListWrap'>
                     {storelist.map((store, index) => (
-                        <div key={index} className='storeList'>
+                        <div key={index} className='storeList' onClick={() => {moveToDetail(store)}}>
                             <div  className='storeImg'><img src={store.storePictureUrl} alt="storeImg"/></div>
                             <div className='storeName'>{store.storeName}</div>
                             <div className='storeInfo'>{store.info}</div>
