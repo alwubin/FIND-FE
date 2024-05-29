@@ -3,6 +3,7 @@ import axios from 'axios';
 import { HiMiniUserCircle } from "react-icons/hi2";
 import { FaChevronRight } from "react-icons/fa6";
 import '../styles/Mypage.css';
+import { refreshAccessToken } from '../authUtil';
 
 
 const Mypage = () => {
@@ -33,15 +34,14 @@ const Mypage = () => {
             setUserId(myInfo.userId);
         })
         .catch((err) => {
-            // if (err.response.status === 401) {
-            //     refreshAccessToken()
-            //         .then(() => {
-            //             inquireMyPage();
-            //         })
-            // } else {
-            //     console.log('마이페이지 조회 실패', err);
-            // }
-            console.log('마이페이지 조회 실패', err);
+            if (err.response.status === 401) {
+                refreshAccessToken()
+                    .then(() => {
+                        inquireMyPage();
+                    })
+            } else {
+                console.log('마이페이지 조회 실패', err);
+            }
         })
     }
 

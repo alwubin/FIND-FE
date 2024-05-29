@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import '../styles/Main.css'
 import { useNavigate } from 'react-router-dom';
+import { refreshAccessToken } from '../authUtil';
 
 const Main = () => {
     const navigate = useNavigate();
@@ -31,7 +32,14 @@ const Main = () => {
             console.log(res.data);
         })
         .catch((err) => {
-            console.log(err);
+            if (err.response.status === 401) {
+                refreshAccessToken()
+                    .then(() => {
+                        handleCategoryClick();
+                    })
+            } else {
+                console.log(err);
+            }
         });
     }
 
