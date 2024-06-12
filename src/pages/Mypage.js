@@ -11,7 +11,23 @@ const Mypage = () => {
     const [userId, setUserId] = useState(0);
     const [loginId, setLoginId] = useState('thisisidsample');
     const [nickname, setNickname] = useState('단곰이');
+
+
+    // -------------jy 수정---------------
+
+    // review state
+    const [userReviews, setReviews] = useState({});
+    // 리뷰 토글 리스트 state
+    const [isRevOpen, setRevOpen] = useState(false);
+    // 리뷰 토글 리스트 handle function
+    const handleToggle = () => {
+        setRevOpen(!isRevOpen);
+    }
+
+    // -------------jy 수정---------------
+
     const [reviews, setReviews] = useState([]);
+
 
     const handleLogout = () => {
         localStorage.removeItem('accessToken');
@@ -45,6 +61,30 @@ const Mypage = () => {
         })
     }
 
+
+    // -------------jy 수정---------------
+
+    // 마이페이지 리뷰 조회 코드
+    const getMyReview = () => {
+        axios
+        .get(`http://16.171.231.94:8080/api/users/me/reviews`, {
+            withCredentials: true,
+            headers: {
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
+        })
+        .then((res) => {
+            setReviews(res.data);
+            console.log(res.data);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    };
+
+    // -------------jy 수정---------------
+
+
     useEffect(() => {
         if (!localStorage.getItem('accessToken')) {
             window.location.href = '/';
@@ -52,6 +92,17 @@ const Mypage = () => {
             inquireMyPage();
         }
     }, []);
+
+
+    // -------------jy 수정---------------
+
+    // review 불러오기
+    useEffect(() => {
+        getMyReview();
+    }, {});
+
+    // -------------jy 수정---------------
+
 
     return (
         <div className='myPage'>
@@ -97,13 +148,65 @@ const Mypage = () => {
                             <div className='myPageWrittenReview'>
                                 작성한 리뷰
                             </div>
+
+                            {/* -----------jy 수정 ------------- */}
+
+                            {/* 마이페이지 리뷰 토글 작성 */}
+                            <div className="myPageReviewIcon" onClick={handleToggle}>
+                                {isRevOpen ? (
+                                <FaChevronDown
+                                    size="16px"
+                                    color="#6476fc"
+                                    style={{ cursor: "pointer" }}
+                                />
+                                ) : (
+                                <FaChevronRight
+                                    size="16px"
+                                    color="#6476fc"
+                                    style={{ cursor: "pointer" }}
+                                />
+                                )}
+                            </div>
+
+                            {/* -----------jy 수정 ------------- */}
+
                             <div className='myPageReviewIcon'>
                                 <FaChevronRight size="16px" color='#6476fc'/>
                             </div>
+
                         </div>
 
                     </div>
                 </div>
+
+                {/* -----------jy 수정 ------------- */}
+
+                {/* 마이페이지 리뷰 조회 부분 */}
+                {userReviews &&
+                userReviews.result?.reviews.map((review, index) => (
+                    <div
+                    key={index}
+                    className="userReview"
+                    style={{
+                        display: isRevOpen ? "block" : "none",
+                    }}
+                    >
+                    <span className="storeNameOnRev">{review.storeName}</span>
+                    <hr style={{ margin: "3px" }} />
+                    <Rating
+                        className="starRate"
+                        readOnly
+                        size="small"
+                        // style={{ padding: "5px" }}
+                        value={review.rating}
+                    />
+                    <br />
+                    <span className="reviewContent">{review.content}</span>
+                    </div>
+                ))}
+
+                {/* -----------jy 수정 ------------- */}
+
 
                 {/* <div className='othersWrap'>
                     <div className='myPageContentTitle'>기타</div>
