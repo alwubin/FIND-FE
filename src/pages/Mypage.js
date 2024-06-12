@@ -26,8 +26,6 @@ const Mypage = () => {
 
     // -------------jy 수정---------------
 
-    const [reviews, setReviews] = useState([]);
-
 
     const handleLogout = () => {
         localStorage.removeItem('accessToken');
@@ -78,7 +76,14 @@ const Mypage = () => {
             console.log(res.data);
         })
         .catch((err) => {
-            console.log(err);
+            if (err.response.status === 401) {
+                refreshAccessToken()
+                    .then(() => {
+                        handleCategoryClick();
+                    })
+            } else {
+                console.log(err);
+            }
         });
     };
 

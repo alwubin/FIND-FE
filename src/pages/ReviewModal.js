@@ -64,7 +64,14 @@ const ModalFunc = ({ isOpen, onRequestClose, storeName, storeId }) => {
         }
       )
       .catch((err) => {
-        console.log(err);
+        if (err.response.status === 401) {
+          refreshAccessToken()
+              .then(() => {
+                  handleCategoryClick();
+              })
+          } else {
+          console.log(err);
+          }
       });
   };
 
