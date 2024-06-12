@@ -1,3 +1,14 @@
-/* .App {
+.App {
+    font-family: "PretendardVariable";
   
-} */
+}
+
+@font-face {
+    font-family: "ArchivoBlack-Regular";
+    src: url("./fonts/ArchivoBlack-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "PretendardVariable";
+    src: url("./fonts/PretendardVariable.ttf") format("truetype");
+}

@@ -1,0 +1,44 @@
+.headerWrapper {
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    border-bottom: 1.5px solid #7CA1FF;
+    height: 80px;
+    background-color: white;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    height: auto;
+    margin-right: 1rem;
+    margin-left: 1rem;
+}
+
+.headerContents {
+    width: 1400px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.logo {
+    font-family: "ArchivoBlack-Regular", sans-serif;
+    font-size: 4.4rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #6476fc;
+}
+
+.spacer {
+    flex-grow: 1;
+}
+
+.userIcon {
+    cursor: pointer;
+}

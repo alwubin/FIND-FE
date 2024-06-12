@@ -12,6 +12,7 @@ const Mypage = () => {
     const [loginId, setLoginId] = useState('thisisidsample');
     const [nickname, setNickname] = useState('단곰이');
 
+
     // -------------jy 수정---------------
 
     // review state
@@ -24,6 +25,9 @@ const Mypage = () => {
     }
 
     // -------------jy 수정---------------
+
+    const [reviews, setReviews] = useState([]);
+
 
     const handleLogout = () => {
         localStorage.removeItem('accessToken');
@@ -57,6 +61,7 @@ const Mypage = () => {
         })
     }
 
+
     // -------------jy 수정---------------
 
     // 마이페이지 리뷰 조회 코드
@@ -79,6 +84,7 @@ const Mypage = () => {
 
     // -------------jy 수정---------------
 
+
     useEffect(() => {
         if (!localStorage.getItem('accessToken')) {
             window.location.href = '/';
@@ -96,6 +102,7 @@ const Mypage = () => {
     }, {});
 
     // -------------jy 수정---------------
+
 
     return (
         <div className='myPage'>
@@ -141,6 +148,7 @@ const Mypage = () => {
                             <div className='myPageWrittenReview'>
                                 작성한 리뷰
                             </div>
+
                             {/* -----------jy 수정 ------------- */}
 
                             {/* 마이페이지 리뷰 토글 작성 */}
@@ -161,10 +169,16 @@ const Mypage = () => {
                             </div>
 
                             {/* -----------jy 수정 ------------- */}
+
+                            <div className='myPageReviewIcon'>
+                                <FaChevronRight size="16px" color='#6476fc'/>
+                            </div>
+
                         </div>
 
                     </div>
                 </div>
+
                 {/* -----------jy 수정 ------------- */}
 
                 {/* 마이페이지 리뷰 조회 부분 */}
@@ -192,6 +206,7 @@ const Mypage = () => {
                 ))}
 
                 {/* -----------jy 수정 ------------- */}
+
 
                 {/* <div className='othersWrap'>
                     <div className='myPageContentTitle'>기타</div>

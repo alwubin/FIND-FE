@@ -1,0 +1,80 @@
+.signupPage {
+    padding-top: 80px;
+    width: 100%;
+    height: calc(100vh - 100px); 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.signupPageContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+}
+
+.signupInputWrap {
+    display: flex;
+    margin-bottom: 30px;
+    color: #0130AB;
+    font-size: 15px;
+    border-radius: 6px;
+    padding: 15px;
+    /* margin-top: 8px; */
+    background-color: transparent;
+    border: 1px solid #7CA1FF;
+    width: 405px;
+    white-space: nowrap;
+}
+
+.signupInput {
+    width: 100%;
+    margin-left: 10px;
+    outline: none;
+    border: none;
+    height: 16px;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.signupInput::placeholder {
+    font-size: 8px;
+}
+
+.checkDuplicateButton {
+    margin: 13px 0 13px auto;
+    font-size: 12px;
+    width: 17%;
+    height: 23px;
+    border-radius: 5px;
+    color: #FFFFF8;
+    outline: none;
+    border: none;
+    background-color: #7CA1FF;
+    cursor: pointer;
+}
+
+.signupButton {
+    margin-top: 10px;
+    width: 60%;
+    height: 45px;
+    border-radius: 5px;
+    color: #FFFFF8;
+    outline: none;
+    border: none;
+    background-color: #7CA1FF;
+    cursor: pointer;
+}
+
+.signupButton:disabled {
+    background-color: #a9b7cb;
+}
+
+.inputMessage {
+    font-size: 10px;
+    margin-bottom: 5px;
+    color: #EC6863;
+}
