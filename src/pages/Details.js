@@ -54,7 +54,7 @@ const Details = () => {
   return (
     <div className="detailPage">
       <div className="detailPageContent">
-        <div className="storeImg">
+        <div className="storeImage">
           <img src={storeInfo.result?.storePictureUrl} alt="이미지 로딩 실패" />
         </div>
 

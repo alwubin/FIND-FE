@@ -29,11 +29,11 @@ span:not(.storeDescription, .storeAddress) {
   margin: 15px;
 }
 
-.storeImg {
+.storeImage {
   height: 30%;
 }
 
-.storeImg > img {
+.storeImage img {
   width: 100%;
   height: 100%;
   border-radius: 8px;
