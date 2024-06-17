@@ -153,9 +153,7 @@ const Mypage = () => {
 
               {/* -----------jy 수정 ------------- */}
 
-              <div className="myPageReviewIcon">
-                <FaChevronRight size="16px" color="#6476fc" />
-              </div>
+      
             </div>
           </div>
         </div>
