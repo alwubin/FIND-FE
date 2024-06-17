@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { HiMiniUserCircle } from "react-icons/hi2";
-import { FaChevronRight } from "react-icons/fa6";
+import { FaChevronDown, FaChevronRight } from "react-icons/fa6";
 import "../styles/Mypage.css";
 import { refreshAccessToken } from "../authUtil";
+import { Rating } from "@mui/material";
 
 const Mypage = () => {
   const [userId, setUserId] = useState(0);
