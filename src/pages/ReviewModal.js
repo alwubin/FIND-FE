@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import { Rating } from "@mui/material";
 import axios from "axios";
+import { refreshAccessToken } from "../authUtil";
 
 const ModalStyle = {
   overlay: {
@@ -67,7 +68,7 @@ const ModalFunc = ({ isOpen, onRequestClose, storeName, storeId }) => {
         if (err.response.status === 401) {
           refreshAccessToken()
               .then(() => {
-                  handleCategoryClick();
+                writeStoreReview();
               })
           } else {
           console.log(err);
