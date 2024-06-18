@@ -58,18 +58,20 @@ const Details = () => {
           <img src={storeInfo.result?.storePictureUrl} alt="이미지 로딩 실패" />
         </div>
 
-        <div className="storeNameNDescription">
-          <span className="storeName">{storeInfo.result?.storeName}</span>
+        <div className="storeNameNDescription" style={{ paddingTop:'10px', paddingBottom:'10px' }}>
+          <span className="storeName" style={{ paddingBottom:'10px' }}>{storeInfo.result?.storeName}</span>
           <br />
           <span className="storeDescription">{storeInfo.result?.info}</span>
         </div>
 
         <div className="storeLocation">
-          <span style={{ fontSize: "17px" }}>위치</span>
-          <br />
-          <span className="storeAddress" style={{ fontSize: "14px" }}>
-            {storeInfo.result?.storeAddress}
-          </span>
+          <div style={{marginLeft:'15px', border:'none'}}>
+            <span style={{ fontSize: "17px" }}>위치</span>
+            <br />
+            <span className="storeAddress" style={{ fontSize: "14px" }}>
+              {storeInfo.result?.storeAddress}
+            </span>
+          </div>
           <hr />
           <div className="storeMap">
             {storeInfo.result?.latitude && (
@@ -96,9 +98,9 @@ const Details = () => {
             )}
           </div>
           <hr />
-          <span className="callNumber">
+          <div className="callNumber" style={{ marginLeft:'15px', border:'none'}}>
             TEL: {storeInfo.result?.storePhoneNumber}
-          </span>
+          </div>
         </div>
 
         <div className="storeReviewPart">

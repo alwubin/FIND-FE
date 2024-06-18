@@ -64,6 +64,9 @@ const ModalFunc = ({ isOpen, onRequestClose, storeName, storeId }) => {
           },
         }
       )
+      .then(() => {
+        window.location.reload();
+      })
       .catch((err) => {
         if (err.response.status === 401) {
           refreshAccessToken()

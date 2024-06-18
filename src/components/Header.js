@@ -13,15 +13,20 @@ const Header = () => {
             navigate('/login');
         }
     }
+
+    const handleLogo = () => {
+        navigate('/');
+    }
+
     return (
         <div className='headerWrapper'>
             <div className='header'>
                 <div className='headerContents'>
-                    <div className='logo'>
+                    <div className='logo' style={{cursor:'pointer'}} onClick={handleLogo}>
                         F?ND
                     </div>
                     <div className='spacer'></div>
-                    <FaRegUser className='userIcon' onClick={handleHeader} size="28px" color='#6476fc'/>
+                    <FaRegUser className='userIcon' onClick={handleHeader} size="28px" color='#0130AB'/>
                 </div>
             </div>
         </div>
