@@ -32,7 +32,7 @@ const Mypage = () => {
 
   const inquireMyPage = () => {
     axios
-      .get(`http://16.171.231.94:8080/api/users/me`, {
+      .get(`http://54.180.9.206:8080/api/users/me`, {
         withCredentials: true,
         headers: {
           Authorization: `Bearer ${localStorage.getItem("accessToken")}`,

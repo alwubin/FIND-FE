@@ -39,7 +39,7 @@ const Signup = () => {
     }
 
     const handleIdCheck = () => {
-        axios.get(`http://16.171.231.94:8080/api/users/check-id?loginId=${id}`,
+        axios.get(`http://54.180.9.206:8080/api/users/check-id?loginId=${id}`,
             { withCredentials: true }
         )
         .then((res) => {

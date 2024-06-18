@@ -26,7 +26,7 @@ const Main = () => {
     };
 
     const getStoreList = (listIndex) => {
-        axios.get(`http://16.171.231.94:8080/api/store/storelist/category/${listIndex}`)
+        axios.get(`http://54.180.9.206:8080/api/store/storelist/category/${listIndex}`)
         .then ((res) => {
             setStoreList(res.data.result);
             console.log(res.data);

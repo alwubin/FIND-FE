@@ -17,7 +17,7 @@ const Details = () => {
 
   const getStoreInfo = (storeId) => {
     axios
-      .get(`http://16.171.231.94:8080/api/store/storelist/${storeId}`)
+      .get(`http://54.180.9.206:8080/api/store/storelist/${storeId}`)
       .then((res) => {
         setStoreInfo(res.data);
       })
@@ -28,7 +28,7 @@ const Details = () => {
 
   const getStoreReview = (storeId) => {
     axios
-      .get(`http://16.171.231.94:8080/api/store/storelist/${storeId}/reviews`)
+      .get(`http://54.180.9.206:8080/api/store/storelist/${storeId}/reviews`)
       .then((res) => {
         setStoreReview(res.data);
       })
