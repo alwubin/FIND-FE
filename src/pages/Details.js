@@ -28,7 +28,7 @@ const Details = () => {
 
   const getStoreReview = (storeId) => {
     axios
-      .get(`http://54.180.9.206:8080/api/store/storelist/${storeId}/reviews`)
+      .get(`https://api.foodindankook.com/api/store/storelist/${storeId}/reviews`)
       .then((res) => {
         setStoreReview(res.data);
       })

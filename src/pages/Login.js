@@ -9,7 +9,7 @@ const Login = () => {
     const [pw, setPw] = useState('');
 
     const handleLogin = () => {
-        axios.post('http://54.180.9.206:8080/api/users/login',
+        axios.post('https://api.foodindankook.com/api/users/login',
             {
                 "loginId": id,
                 "password": pw

@@ -4,7 +4,7 @@ export const refreshAccessToken = () => {
     const refreshToken = localStorage.getItem('refreshToken');
 
     return axios
-        .post('http://54.180.9.206:8080/api/users/refresh-token',
+        .post('https://api.foodindankook.com/api/users/refresh-token',
         { refreshToken: refreshToken }, 
         { withCredentials: true })
         .then((res) => {

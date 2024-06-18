@@ -50,7 +50,7 @@ const ModalFunc = ({ isOpen, onRequestClose, storeName, storeId }) => {
 
     axios
       .post(
-        `http://54.180.9.206:8080/api/review/create`,
+        `https://api.foodindankook.com/api/review/create`,
         {
           storeId: storeId,
           rating: value,
