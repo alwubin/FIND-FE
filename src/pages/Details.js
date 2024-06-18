@@ -17,7 +17,7 @@ const Details = () => {
 
   const getStoreInfo = (storeId) => {
     axios
-      .get(`http://54.180.9.206:8080/api/store/storelist/${storeId}`)
+      .get(`https://api.foodindankook.com/api/store/storelist/${storeId}`)
       .then((res) => {
         setStoreInfo(res.data);
       })

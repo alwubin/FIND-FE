@@ -61,7 +61,7 @@ const Mypage = () => {
   // 마이페이지 리뷰 조회 코드
   const getMyReview = () => {
     axios
-      .get(`http://16.171.231.94:8080/api/users/me/reviews`, {
+      .get(`https://api.foodindankook.com/api/users/me/reviews`, {
         withCredentials: true,
         headers: {
           Authorization: `Bearer ${localStorage.getItem("accessToken")}`,

@@ -108,7 +108,7 @@ const Signup = () => {
     }, [nicknameValid, idValid, passwordMatch, passwordValid]);
 
     const registerUser = () => {
-        axios.post('http://16.171.231.94:8080/api/users/register',
+        axios.post('https://api.foodindankook.com/api/users/register',
             {
                 'loginId': id,
                 'password': pw,
