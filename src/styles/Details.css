@@ -30,7 +30,8 @@ span:not(.storeDescription, .storeAddress) {
 }
 
 .storeImage {
-  height: 30%;
+  max-height: 540px;
+  height: 50%;
 }
 
 .storeImage img {

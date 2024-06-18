@@ -112,11 +112,12 @@ const ModalFunc = ({ isOpen, onRequestClose, storeName, storeId }) => {
         <br />
 
         <span>{value}점 줄래요</span>
-
+        <br />
         <textarea
           className="reviewText"
           placeholder="이런 점이 좋았어요"
         ></textarea>
+         <br />
 
         <button
           onClick={() => {
