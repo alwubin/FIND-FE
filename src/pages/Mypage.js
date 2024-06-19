@@ -120,9 +120,9 @@ const Mypage = () => {
                 <div className="accountId">{loginId}</div>
               </div>
             </div>
-            <div className="accountManagementItem">비밀번호 변경</div>
-            <div className="accountManagementItem">닉네임 변경</div>
-            <div className="accountManagementItem">프로필 변경</div>
+            <div className="accountManagementItem" style={{color:'#d3d3d3'}}>비밀번호 변경</div>
+            <div className="accountManagementItem" style={{color:'#d3d3d3'}}>닉네임 변경</div>
+            <div className="accountManagementItem" style={{color:'#d3d3d3'}}>프로필 변경</div>
           </div>
         </div>
 
