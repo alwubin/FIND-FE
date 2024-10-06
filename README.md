@@ -11,9 +11,8 @@
 
 
 ## 배포 주소
-> **배포 서버** : <br/>
-> **백엔드 서버** : <br/>
-> **프론트 서버** : 
+> **배포 서버** : www.foodindankook.com<br/>
+
 
 
 ## 프로젝트 소개 
@@ -23,21 +22,15 @@ FIND는 단국대학교 인근 맛집 정보를 제공하는 웹 플랫폼입니
 
 ## 🚀 사용한 기술 
 ### Environment
-<img  src="https://img.shields.io/badge/Visual_Studio-5C2D91?style=for-the-badge&logo=visual%20studio&logoColor=white"/> 
-<img width="17%"src="https://img.shields.io/badge/GitHub-181717?style=flat-square&amp;logo=GitHub&amp;logoColor=white">
+<img  src="https://img.shields.io/badge/Visual_Studio-5C2D91?style=for-the-badge&logo=visual%20studio&logoColor=white"/> <img width="90px" src="https://img.shields.io/badge/GitHub-181717?style=flat-square&amp;logo=GitHub&amp;logoColor=white">
 
 ### Development
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white"/> 
-<img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/> 
+<img width="130px" src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white"/> <img width="90px" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB"/> 
 
-<img width="9%" src="https://img.shields.io/badge/Java-007396?style=flat-square&amp;logo=Java&amp;logoColor=white">
-<img width="16%" src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=Spring&logoColor=white"/>
-<img width="15%" src="https://img.shields.io/badge/Mysql-4479A1?style=flat-square&amp;logo=Mysql&amp;logoColor=white">
-
-<img width="26%" src="https://img.shields.io/badge/Amazon AWS-232F3E?style=flat-square&amp;logo=amazonaws&amp;logoColor=white">
+<img width="50px" src="https://img.shields.io/badge/Java-007396?style=flat-square&amp;logo=Java&amp;logoColor=white"> <img width="90px" src="https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=Spring&logoColor=white"/> <img width="85px" src="https://img.shields.io/badge/Mysql-4479A1?style=flat-square&amp;logo=Mysql&amp;logoColor=white"> <img width="120px" src="https://img.shields.io/badge/Amazon AWS-232F3E?style=flat-square&amp;logo=amazonaws&amp;logoColor=white">
 
 ### Communication 
-<img width="19%" src="https://img.shields.io/badge/Discord-5865F2?style=flat-square&amp;logo=discord&amp;logoColor=white">
+<img width="90px" src="https://img.shields.io/badge/Discord-5865F2?style=flat-square&amp;logo=discord&amp;logoColor=white">
 
 
 ## 💡 주요 기능
@@ -52,9 +45,3 @@ FIND는 단국대학교 인근 맛집 정보를 제공하는 웹 플랫폼입니
     <li>지역 맛집 문화 활성화</li>
     <li>이용자 간 정보 교류 촉진</li>
 </ul>
-
-## 📺 화면 구성 
-<br/>
-
-
-
